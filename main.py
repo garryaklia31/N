@@ -16,10 +16,10 @@ if not LOADED_ENV:
     print(bad("You need to create the .env using .env.example as an example"))
     exit(1)
 
-API_ID = '19291502'
-API_HASH = '2b8d8fbf23d41a95c6fb70716028e73c'
-BOT_TOKEN = '586316412AHnCSus5lqkQswCh3ApyzOlpBksktYvwAc'
-CHANNEL_LOGS = '-1002079833699'
+API_ID = '28386099'
+API_HASH = 'a0057fbf1ca49ce5e9d26fd4afd6e78b'
+BOT_TOKEN = '6619456557:AAE5hwRYut_B-AefhkCx1kh9kgIWwlrWLg4'
+CHANNEL_LOGS = '-1001757174395'
 
 app = Client(
     "bot",
@@ -60,7 +60,7 @@ async def user_ban(client: Client, m: Message):
         return
     chat_id = m.chat.id
     with Database() as db:
-        if chat_id == -1001494650944:
+        if chat_id == -1001757174395:
             async for member in m.chat.get_members():
                 if not member.user:
                     continue
@@ -76,12 +76,12 @@ async def user_ban(client: Client, m: Message):
                     continue
                 await m.chat.ban_member(user_id)
                 info=db.get_info_user(user_id)
-                await client.send_message(-1001494650944, f"<b>User eliminado: @{info['USERNAME']}</b>")
+                await client.send_message(-1001757174395, f"<b>User eliminado: @{info['USERNAME']}</b>")
 
         #         if not db.is_admin(m.from_user.id):
         #             return await m.reply(
         #                 """𝘽𝙤𝙩 𝙪𝙣𝙙𝙚𝙧 𝙈𝙖𝙣𝙩𝙚𝙣𝙞𝙚𝙣𝙘𝙚 ⚠️
-        # 𝙍𝙚𝙖𝙨𝙤𝙣 -» <code>Mantenimiento by @Fucker_504</code>
+        # 𝙍𝙚𝙖𝙨𝙤𝙣 -» <code>Mantenimiento by @PUNJAB_BUY</code>
         #        """
         #             )
         user_id = m.from_user.id
